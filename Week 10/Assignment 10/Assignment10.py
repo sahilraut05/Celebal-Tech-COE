@@ -126,7 +126,7 @@ def main():
                               collate_fn=lambda x: tuple(zip(*x)))
     print(f"DataLoader initialization took {time.time() - start_time:.2f} seconds")
 
-    num_classes = len(train_dataset.classes)
+    num_classes = len(train_dataset.classes) + 1  # Adding 1 for the background class
     model = get_model(num_classes)
     model.to(device)
 
